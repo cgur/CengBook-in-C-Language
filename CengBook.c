@@ -460,15 +460,24 @@ void commandPath ( String userName1 , String userName2 )
   else
       {
 
-      if(getUserPtrByName(bookPtr,userName1) == NULL) {NL; printf("  User '%s' not found in CengBook!",userName1);NL;}
+      if((user1 = getUserPtrByName(bookPtr,userName1)) == NULL) {
+	      	
+	      	NL; 
+	      	printf("  User '%s' not found in CengBook!",userName1);
+	      	NL;
+      }
 
-      else if(getUserPtrByName(bookPtr,userName2) == NULL) {NL; printf("  User '%s' not found in CengBook!",userName2);NL;}
+      else if((user2 = getUserPtrByName(bookPtr,userName2)) == NULL) {
+	      NL; 
+	      printf("  User '%s' not found in CengBook!",userName2);
+	      NL;
+      }
 
       else
       {
 
-        user1 = getUserPtrByName(bookPtr,userName1);
-        user2 = getUserPtrByName(bookPtr,userName2);
+        //user1 = getUserPtrByName(bookPtr,userName1);
+        //user2 = getUserPtrByName(bookPtr,userName2);
 
         if( strcmp( userName1 , userName2 ) == 0)  { NL; printf("  Path to self queried!"); NL; }
 
